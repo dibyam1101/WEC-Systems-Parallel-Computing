@@ -9,8 +9,8 @@ while(len(array)>100):
 
     #Using a multiprocessing pool to sum the array elements
     pool = mp.Pool(processes=cpu_count)
-    #Mapping every 12 elements of to the sum of these 12 elements and running multiple such 
-    #processes in parallel. Untimately, we keep reducing the array size by a factor of 12 untill it 
+    #Mapping every 'cpu_count' elements of to the sum of these 'cpu_count' elements and running multiple such 
+    #processes in parallel. Untimately, we keep reducing the array size by a factor of 'cpu_count' untill it 
     #becomes manageable
 
     array = pool.map(sum, [array[i:i+cpu_count] for i in range(0, len(array), cpu_count)])
