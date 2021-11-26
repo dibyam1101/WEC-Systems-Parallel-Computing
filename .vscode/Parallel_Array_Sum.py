@@ -19,3 +19,5 @@ if __name__ == "__main__":
         end_time = time.time()        
         array = result
 print(sum(result), end_time - start_time)
+
+print(mp.cpu_count())
